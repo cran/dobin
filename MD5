@@ -1,0 +1,15 @@
+868b72301023f845afa8b6b47d0af5f6 *DESCRIPTION
+57575e220caa1d77e76cc22ccab22cc7 *LICENSE
+23f8c0701af690d5b79aac332b40783c *NAMESPACE
+d993f3d08a8be3cde1be41b7b9003f83 *R/dobin.R
+b108650da032cf251cbd4ab7bad6644b *R/utils.R
+82ea5f73c9406367282597b4226662da *R/y_space.R
+64ac8ed810a99b039f5b229b52fd3c7b *build/vignette.rds
+ff50ce1041741cfb4328f2ba7137c283 *inst/doc/dobin.R
+a0e64883ab0f1b57998a1264b596ccb3 *inst/doc/dobin.Rmd
+2c616d1a469bca5e276d1508c5d1eb2f *inst/doc/dobin.html
+f213b2e27f0de3d4fcd559283423d4aa *man/dobin.Rd
+5634605aac616cbd3aaeae32352743c0 *man/figures/bimodal-1.png
+2d4c487b030f05453544461f27bd4e51 *man/figures/bimodal_pca-1.png
+42ff5e693ac3ecad7122b47b0e6014ee *vignettes/bibliography.bib
+a0e64883ab0f1b57998a1264b596ccb3 *vignettes/dobin.Rmd
