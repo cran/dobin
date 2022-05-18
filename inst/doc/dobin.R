@@ -1,11 +1,11 @@
-## ----setup, include = FALSE----------------------------------------------
+## ----setup, include = FALSE---------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.width=8, fig.height=6
 )
 
-## ----load2, echo=FALSE, eval=TRUE, message=FALSE-------------------------
+## ----load2, echo=FALSE, eval=TRUE, message=FALSE------------------------------
 if (!requireNamespace("dobin", quietly = TRUE)) {
     stop("Package dobin is needed for the vignette. Please install it.",
       call. = FALSE)
@@ -19,19 +19,19 @@ if (!requireNamespace("ggplot2", quietly = TRUE)) {
       call. = FALSE)
 }
 
-## ----install_dobin_cran, eval=FALSE--------------------------------------
+## ----install_dobin_cran, eval=FALSE-------------------------------------------
 #   install.packages("dobin")
 
-## ----install_dobin, eval=FALSE-------------------------------------------
+## ----install_dobin, eval=FALSE------------------------------------------------
 #   install.packages("devtools")
 #   devtools::install_github("sevvandi/dobin")
 
-## ----load, echo=TRUE-----------------------------------------------------
-library("dobin")
-library("ggplot2")
-library("OutliersO3")
+## ----load, echo=TRUE----------------------------------------------------------
+library(dobin)
+library(ggplot2)
+library(OutliersO3)
 
-## ----election2005, echo=FALSE--------------------------------------------
+## ----election2005, echo=FALSE-------------------------------------------------
 data <- 
 structure(list(Flaeche.km2. = c(2127.9, 2742.5, 2000.7, 2161, 
 142.8, 1301.7, 664.2, 1333.4, 1532.7, 1350, 406.2, 4350, 2647.4, 
@@ -154,7 +154,7 @@ structure(list(Flaeche.km2. = c(2127.9, 2742.5, 2000.7, 2161,
 621.5, 685.3, 728.3, 724.5, 742.9, 670, 717.9, 717.3, 724.6)), class = "data.frame", row.names = c(NA, 
 -299L))
 
-## ----ex1_dobin-----------------------------------------------------------
+## ----ex1_dobin----------------------------------------------------------------
 names(data) <- c("Area", "Population_density", "Birthrate", "Car_ownership")
 out <- dobin(data, frac=0.9, norm=3)
 
@@ -166,32 +166,34 @@ colnames(df) <- c("DC1", "DC2")
 df2 <- df[inds, ]
 ggplot(df, aes(x=DC1,y=DC2)) + geom_point(aes(shape=labs, color=labs), size=2 ) + geom_text(data=df2, aes(DC1, DC2, label = inds), nudge_x = 0.5) + theme_bw()
 
-## ----ex2_dobin-----------------------------------------------------------
+## ----ex2_dobin----------------------------------------------------------------
 out$vec[ ,1]
 
-## ----ex1_o3--------------------------------------------------------------
+## ----ex1_o3-------------------------------------------------------------------
 O3y <- OutliersO3::O3prep(data, method=c("HDo", "PCS", "BAC", "adjOut", "DDC", "MCD"))
 O3y1 <- OutliersO3::O3plotM(O3y)
 O3y1$gO3
 
-## ----diamonds------------------------------------------------------------
+## ----diamonds-----------------------------------------------------------------
 data(diamonds, package="ggplot2")
 data <- diamonds[1:5000, c(1, 5, 6, 8:10)]
 
 out <- dobin(data, frac=0.9, norm=3)
+autoplot(out)
+
 kk <- min(ceiling(dim(data)[1]/10),25)
 knn_dist <- FNN::knn.dist(out$coords[, 1:3], k = kk)
 knn_dist <- knn_dist[ ,kk]
 ord <- order(knn_dist, decreasing=TRUE)
 ord[1:4]
 
-## ----diamonds2-----------------------------------------------------------
+## ----diamonds2----------------------------------------------------------------
 labs <- rep("norm", length(ord))
 labs[ord[1:4]] <- "out"
 df <- as.data.frame(out$coords[, 1:2])
-colnames(df) <- c("DC1", "DC2")
+colnames(df) <- c("DB1", "DB2")
 df2 <- df[ord[1:4], ]
-ggplot(df, aes(x=DC1,y=DC2)) + geom_point(aes(shape=labs, color=labs), size=2 ) + geom_text(data=df2, aes(DC1, DC2, label = ord[1:4]), nudge_x = 0.5) + theme_bw()
+ggplot(df, aes(x=DB1,y=DB2)) + geom_point(aes(shape=labs, color=labs), size=2 ) + geom_text(data=df2, aes(DB1, DB2, label = ord[1:4]), nudge_x = 0.5) + theme_bw()
 
 pPa <- O3prep(data, k1=5, method=c("HDo", "PCS", "adjOut"), tolHDo = 0.001, tolPCS=0.001, toladj=0.001, boxplotLimits=10)
 pPx <- O3plotM(pPa)
