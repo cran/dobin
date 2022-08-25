@@ -1,7 +1,7 @@
 Package: dobin
 Type: Package
 Title: Dimension Reduction for Outlier Detection
-Version: 1.0.3
+Version: 1.0.4
 Authors@R: person("Sevvandi", "Kandanaarachchi", email = "sevvandik@gmail.com",
   role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0337-0395"))
 Maintainer: Sevvandi Kandanaarachchi <sevvandik@gmail.com>
@@ -13,14 +13,14 @@ Description: A dimension reduction technique for outlier detection. DOBIN: a Dis
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: dbscan, ggplot2, pracma
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Suggests: knitr, rmarkdown, OutliersO3, FNN
 VignetteBuilder: knitr
 Depends: R (>= 3.4.0)
 URL: https://sevvandi.github.io/dobin/
 NeedsCompilation: no
-Packaged: 2022-05-18 05:39:50 UTC; sevva
+Packaged: 2022-08-25 22:03:32 UTC; kan092
 Author: Sevvandi Kandanaarachchi [aut, cre]
     (<https://orcid.org/0000-0002-0337-0395>)
 Repository: CRAN
-Date/Publication: 2022-05-18 13:30:08 UTC
+Date/Publication: 2022-08-25 22:52:33 UTC
