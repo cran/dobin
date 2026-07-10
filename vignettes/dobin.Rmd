@@ -206,7 +206,7 @@ out$vec[ ,1]
 We see that the second variable which is *population density* is the main contributor to outliers in this dataset.  Next we draw the O3 plot using *OutliersO3* package [@O3Rpack]. O3 plots are introduced in [@unwin2019multivariate]. The O3 plot can identify outliers by using 6 different outlier detection methods. Therefore, it acts as an ensemble method. In addition, it also identifies outliers in axes-parallel subspaces. 
 
 ```{r ex1_o3}
-O3y <- OutliersO3::O3prep(data, method=c("HDo", "PCS", "BAC", "adjOut", "DDC", "MCD"))
+O3y <- OutliersO3::O3prep(data, method=c("PCS", "BAC", "adjOut", "DDC", "MCD"))
 O3y1 <- OutliersO3::O3plotM(O3y)
 O3y1$gO3
 ```
@@ -237,7 +237,7 @@ colnames(df) <- c("DB1", "DB2")
 df2 <- df[ord[1:4], ]
 ggplot(df, aes(x=DB1,y=DB2)) + geom_point(aes(shape=labs, color=labs), size=2 ) + geom_text(data=df2, aes(DB1, DB2, label = ord[1:4]), nudge_x = 0.5) + theme_bw()
 
-pPa <- O3prep(data, k1=5, method=c("HDo", "PCS", "adjOut"), tolHDo = 0.001, tolPCS=0.001, toladj=0.001, boxplotLimits=10)
+pPa <- O3prep(data, k1=5, method=c("PCS", "adjOut"), tolPCS=0.001, toladj=0.001, boxplotLimits=10)
 pPx <- O3plotM(pPa)
 pPx$gO3x + theme(plot.margin = unit(c(0, 2, 0, 0), "cm"))
 ```

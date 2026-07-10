@@ -20,11 +20,11 @@ if (!requireNamespace("ggplot2", quietly = TRUE)) {
 }
 
 ## ----install_dobin_cran, eval=FALSE-------------------------------------------
-#   install.packages("dobin")
+#  install.packages("dobin")
 
 ## ----install_dobin, eval=FALSE------------------------------------------------
-#   install.packages("devtools")
-#   devtools::install_github("sevvandi/dobin")
+#  install.packages("devtools")
+#  devtools::install_github("sevvandi/dobin")
 
 ## ----load, echo=TRUE----------------------------------------------------------
 library(dobin)
@@ -170,7 +170,7 @@ ggplot(df, aes(x=DC1,y=DC2)) + geom_point(aes(shape=labs, color=labs), size=2 ) 
 out$vec[ ,1]
 
 ## ----ex1_o3-------------------------------------------------------------------
-O3y <- OutliersO3::O3prep(data, method=c("HDo", "PCS", "BAC", "adjOut", "DDC", "MCD"))
+O3y <- OutliersO3::O3prep(data, method=c("PCS", "BAC", "adjOut", "DDC", "MCD"))
 O3y1 <- OutliersO3::O3plotM(O3y)
 O3y1$gO3
 
@@ -195,7 +195,7 @@ colnames(df) <- c("DB1", "DB2")
 df2 <- df[ord[1:4], ]
 ggplot(df, aes(x=DB1,y=DB2)) + geom_point(aes(shape=labs, color=labs), size=2 ) + geom_text(data=df2, aes(DB1, DB2, label = ord[1:4]), nudge_x = 0.5) + theme_bw()
 
-pPa <- O3prep(data, k1=5, method=c("HDo", "PCS", "adjOut"), tolHDo = 0.001, tolPCS=0.001, toladj=0.001, boxplotLimits=10)
+pPa <- O3prep(data, k1=5, method=c("PCS", "adjOut"), tolPCS=0.001, toladj=0.001, boxplotLimits=10)
 pPx <- O3plotM(pPa)
 pPx$gO3x + theme(plot.margin = unit(c(0, 2, 0, 0), "cm"))
 

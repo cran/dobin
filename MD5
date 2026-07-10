@@ -1,4 +1,4 @@
-aa80dade3cd97873b4d79b11d7f32d1d *DESCRIPTION
+f49afff0f3ed6c6eb058b2e5439d5f1e *DESCRIPTION
 fe036bd656a83258ea7c92b533d04ecb *LICENSE
 9cb4df6c68ab52b2fde32e32525074ff *NAMESPACE
 7a6ee21029da5c54db8f103085b8e3c4 *R/autoplot_dobin.R
@@ -7,11 +7,11 @@ fe036bd656a83258ea7c92b533d04ecb *LICENSE
 3ab51fe95c5729e43510266a46483056 *R/print.R
 abe8591e6f25ea211c7685e50781136e *R/utils.R
 0d7e754fcc8daab6ca64bcf23aa27092 *R/y_space.R
-0c6ad5b3446721162c89589e8077ab1c *build/partial.rdb
-66a0bf98073aaeaea6cd8e521dd22334 *build/vignette.rds
-bb934aa97645d11e780f2815d674036b *inst/doc/dobin.R
-7c1290eda97314cc674985b912ab2f91 *inst/doc/dobin.Rmd
-ba8295e261d8863a37907440026e9f66 *inst/doc/dobin.html
+76161b65639451c966be75488458b3c3 *build/partial.rdb
+2e7a7faa0e99b0d5f13d79168a64473f *build/vignette.rds
+a396503ab3da785569f3a6de321f5311 *inst/doc/dobin.R
+d56b34b5935eb0c235e4794c7bb8a6b5 *inst/doc/dobin.Rmd
+30f3f57261c8e1f982c0178f10b120e3 *inst/doc/dobin.html
 1000fa43501af47a78f3017f05ad2144 *man/autoplot.dobin.Rd
 fd6a6a123ecdae7b044a717101317af4 *man/dobin-package.Rd
 b613a865dc8d3597ca2ec1a4d1caa104 *man/dobin.Rd
@@ -21,4 +21,4 @@ e15bb9e8c4b6d459a8cfcd1c5d0c3ad4 *man/figures/logo.png
 a632f7f688d92c9dab396f03f47f66f9 *man/figures/plotting-1.png
 846c90c0b6de49af16e6fb6f1b351459 *man/reexports.Rd
 6dcc7167476f7db7e36583ffe11dea0f *vignettes/bibliography.bib
-7c1290eda97314cc674985b912ab2f91 *vignettes/dobin.Rmd
+d56b34b5935eb0c235e4794c7bb8a6b5 *vignettes/dobin.Rmd
